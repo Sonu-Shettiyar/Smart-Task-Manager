@@ -25,7 +25,7 @@ import {
   TrendingUp
 } from 'lucide-react';
 
-export const Users: React.FC = () => {
+  const Users: React.FC = () => {
   const { state, actions } = useTask();
   const { users, tasks, currentUser } = state;
   const { toast } = useToast();
@@ -344,3 +344,5 @@ export const Users: React.FC = () => {
     </div>
   );
 };
+
+export default Users;

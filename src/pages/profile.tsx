@@ -6,7 +6,7 @@ import { Navigation } from '@/components/Navigation';
 import { UserProfile } from '@/components/profile/UserProfile';
 import { Navigate } from 'react-router-dom';
 
-export const Profile: React.FC = () => {
+  const Profile: React.FC = () => {
   const { state, utils } = useTask();
   const { currentUser, tasks } = state;
 
@@ -37,3 +37,4 @@ export const Profile: React.FC = () => {
     </div>
   );
 };
+export default Profile;

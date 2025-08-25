@@ -25,7 +25,7 @@ import {
   User
 } from 'lucide-react';
 
-export const MyTasks: React.FC = () => {
+ const MyTasks: React.FC = () => {
   const { state, utils } = useTask();
   const { tasks, currentUser } = state;
   
@@ -326,4 +326,6 @@ export const MyTasks: React.FC = () => {
       </div>
     </div>
   );
-};
+ };
+
+export default MyTasks;
