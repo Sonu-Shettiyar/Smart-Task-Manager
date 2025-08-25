@@ -1,3 +1,130 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
- 
+/* Smart Task Manager Design System - Modern, Priority-Based Color Palette */
+
+@layer base {
+  :root {
+    /* Base colors - Light mode */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Primary brand - Deep blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 217 91% 55%;
+
+    /* Secondary - Light gray */
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 217 91% 60%;
+
+    /* Priority colors for task management */
+    --priority-low: 142 76% 36%;
+    --priority-low-foreground: 0 0% 98%;
+    --priority-medium: 48 96% 53%;
+    --priority-medium-foreground: 0 0% 9%;
+    --priority-high: 0 84% 60%;
+    --priority-high-foreground: 0 0% 98%;
+
+    /* Status colors */
+    --status-todo: 240 4.8% 95.9%;
+    --status-todo-foreground: 240 5.9% 10%;
+    --status-progress: 217 91% 60%;
+    --status-progress-foreground: 0 0% 98%;
+    --status-done: 142 76% 36%;
+    --status-done-foreground: 0 0% 98%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Base colors - Dark theme */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary brand - Brighter in dark mode */
+    --primary: 217 91% 65%;
+    --primary-foreground: 240 10% 3.9%;
+    --primary-hover: 217 91% 70%;
+
+    /* Secondary - Dark gray */
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 217 91% 65%;
+
+    /* Priority colors - Adjusted for dark mode */
+    --priority-low: 142 76% 45%;
+    --priority-low-foreground: 0 0% 98%;
+    --priority-medium: 48 96% 60%;
+    --priority-medium-foreground: 240 10% 3.9%;
+    --priority-high: 0 84% 65%;
+    --priority-high-foreground: 0 0% 98%;
+
+    /* Status colors - Dark mode */
+    --status-todo: 240 3.7% 15.9%;
+    --status-todo-foreground: 0 0% 98%;
+    --status-progress: 217 91% 65%;
+    --status-progress-foreground: 240 10% 3.9%;
+    --status-done: 142 76% 45%;
+    --status-done-foreground: 0 0% 98%;
+
+    /* Gradients - Dark mode versions */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 65%), hsl(217 91% 70%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 45%), hsl(142 76% 40%));
+    --gradient-warning: linear-gradient(135deg, hsl(48 96% 60%), hsl(48 96% 55%));
+    --gradient-danger: linear-gradient(135deg, hsl(0 84% 65%), hsl(0 84% 60%));
+
+    /* Shadows - Darker shadows for dark mode */
+    --shadow-primary: 0 4px 20px -4px hsl(217 91% 65% / 0.4);
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.3), 0 1px 2px 0 hsl(0 0% 0% / 0.2);
+    --shadow-elevated: 0 10px 25px -3px hsl(0 0% 0% / 0.4), 0 4px 6px -2px hsl(0 0% 0% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
