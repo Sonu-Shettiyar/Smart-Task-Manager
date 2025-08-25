@@ -1,25 +1,30 @@
- 
 
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import { useTask } from '@/contexts/TaskContext';
 import { Navigation } from '@/components/Navigation';
 import { UserProfile } from '@/components/profile/UserProfile';
-import { Navigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
-  const Profile: React.FC = () => {
+const Profile: React.FC = () => {
   const { state, utils } = useTask();
   const { currentUser, tasks } = state;
+  const router = useRouter();
 
-  if (!currentUser) {
-    return <Navigate to="/" replace />;
-  }
 
-  const userTasks = utils.getUserTasks(currentUser.id, tasks);
+  useEffect(() => {
+    if (!currentUser) {
+      router.push('/')
+    }
+
+  }, [currentUser,router])
+
+  const userTasks = utils.getUserTasks(currentUser?.id || '', tasks);
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Profile Settings</h1>
@@ -28,7 +33,7 @@ import { Navigate } from 'react-router-dom';
           </p>
         </div>
 
-        <UserProfile 
+        <UserProfile
           user={currentUser}
           userTasks={userTasks}
           allTasks={tasks}

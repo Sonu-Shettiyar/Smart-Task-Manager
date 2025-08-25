@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 
 interface UserProfileProps {
-  user: User;
+  user: User | any;
   userTasks: Task[];
   allTasks: Task[];
 }
@@ -33,7 +33,7 @@ export const UserProfile: React.FC<UserProfileProps> = ({
   const completionRate = userTasks.length > 0 ? Math.round((completedTasks / userTasks.length) * 100) : 0;
   
   // Calculate tasks created by user
-  const createdTasks = allTasks.filter(t => t.createdBy === user.id).length;
+  const createdTasks = allTasks.filter(t => t.createdBy === user?.id).length;
   
   // Calculate priority distribution
   const highPriorityTasks = userTasks.filter(t => t.priority === 'high').length;
@@ -75,19 +75,19 @@ export const UserProfile: React.FC<UserProfileProps> = ({
           <div className="flex items-center gap-4">
             <Avatar className="h-16 w-16">
               <AvatarFallback className="text-lg">
-                {user.name.split(' ').map(n => n[0]).join('').toUpperCase()}
+                {user?.name.split(' ').map((n:any) => n[0]).join('').toUpperCase()}
               </AvatarFallback>
             </Avatar>
             <div className="flex-1">
-              <CardTitle className="text-2xl">{user.name}</CardTitle>
+              <CardTitle className="text-2xl">{user?.name}</CardTitle>
               <CardDescription className="flex items-center gap-4 mt-2">
                 <span className="flex items-center gap-1">
                   <Mail className="h-4 w-4" />
-                  {user.email}
+                  {user?.email}
                 </span>
                 <span className="flex items-center gap-1">
                   <Calendar className="h-4 w-4" />
-                  Joined {user.createdAt.toLocaleDateString()}
+                  Joined {user?.createdAt.toLocaleDateString()}
                 </span>
               </CardDescription>
             </div>

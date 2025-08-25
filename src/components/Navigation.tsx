@@ -94,15 +94,15 @@ export const Navigation: React.FC<NavigationProps> = ({ onShowFilters }) => {
                 <Button variant="ghost" className="flex items-center gap-2 h-10">
                   <Avatar className="h-8 w-8">
                     <AvatarFallback className="text-xs">
-                      {currentUser.name.split(' ').map(n => n[0]).join('').toUpperCase()}
+                      {currentUser?.name.split(' ').map(n => n[0]).join('').toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
-                  <span className="hidden sm:inline font-medium">{currentUser.name}</span>
+                  <span className="hidden sm:inline font-medium">{currentUser?.name}</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56">
                 <div className="px-2 py-1.5">
-                  <p className="text-sm font-medium">{currentUser.name}</p>
+                  <p className="text-sm font-medium">{currentUser?.name}</p>
                   <p className="text-xs text-muted-foreground">{currentUser.email}</p>
                 </div>
                 <DropdownMenuSeparator />

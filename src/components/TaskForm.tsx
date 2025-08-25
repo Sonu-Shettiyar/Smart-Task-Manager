@@ -1,5 +1,5 @@
  
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTask } from '@/contexts/TaskContext';
 import { Task, Priority, CreateTaskData, UpdateTaskData } from '@/types';
 import { Button } from '@/components/ui/enhanced-button';

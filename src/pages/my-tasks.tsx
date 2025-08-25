@@ -312,7 +312,7 @@ import {
                   <User className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
                   <h3 className="text-xl font-medium mb-2">No tasks assigned</h3>
                   <p className="text-muted-foreground mb-6">
-                    You don't have any tasks assigned to you yet. Create your first task to get started!
+                    You don&apos;t have any tasks assigned to you yet. Create your first task to get started!
                   </p>
                   <Button onClick={() => setShowTaskForm(true)}>
                     <Plus className="h-4 w-4 mr-2" />
