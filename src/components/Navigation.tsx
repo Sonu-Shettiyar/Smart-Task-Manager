@@ -46,7 +46,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onShowFilters }) => {
   if (!currentUser) return null;
 
   return (
-    <nav className="border-b bg-card/50 backdrop-blur supports-[backdrop-filter]:bg-card/50">
+    <nav className="border-b bg-card/50 backdrop-blur-sm supports-backdrop-filter:bg-card/50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Title */}

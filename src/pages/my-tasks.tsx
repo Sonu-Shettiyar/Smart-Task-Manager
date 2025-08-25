@@ -239,7 +239,7 @@ import {
 
         <div className="flex gap-6">
           {/* Filters Sidebar (Desktop) */}
-          <div className="hidden sm:block w-80 flex-shrink-0">
+          <div className="hidden sm:block w-80 shrink-0">
             <TaskFilters />
           </div>
 

@@ -77,7 +77,7 @@ export const QuickActions: React.FC = () => {
               disabled={action.disabled}
             >
               <div className="flex items-center gap-3 w-full">
-                <Icon className="h-4 w-4 flex-shrink-0" />
+                <Icon className="h-4 w-4 shrink-0" />
                 <div className="text-left flex-1">
                   <div className="font-medium text-sm">{action.label}</div>
                   <div className="text-xs text-muted-foreground">{action.description}</div>
